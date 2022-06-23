@@ -11,12 +11,10 @@ if( class_exists( 'CSF' ) ) {
       'menu_slug'  => 'theme-options',
     ) );
   
-    // Create a section
+    // Hero Section
     CSF::createSection( $prefix, array(
       'title'  => 'Hero Section',
       'fields' => array(
-  
-        // A text field
         array(
           'id'    => 'hero_section_title',
           'type'  => 'text',
@@ -57,20 +55,36 @@ if( class_exists( 'CSF' ) ) {
   
       )
     ) );
-  
-    // Create a section
+    
+    // Featured Services Section 
     CSF::createSection( $prefix, array(
-      'title'  => 'Tab Title 2',
-      'fields' => array(
-  
-        // A textarea field
-        array(
-          'id'    => 'opt-textarea',
-          'type'  => 'textarea',
-          'title' => 'Simple Textarea',
+        'title'     => 'Featured Services',
+        'fields'    => array(
+            array(
+                'id'        => 'featured_service_repeater',
+                'title'     => 'Featured Services',
+                'type'      => 'repeater',
+                'fields'    => array(
+                    array(
+                        'id'        => 'featured_service_icon',
+                        'type'      => 'text',
+                        'title'     => 'Featured Services Icon Tag',
+                        'desc'      => 'Get Icon From: https://icons.getbootstrap.com/icons'
+                    ),
+                    array(
+                        'id'        => 'featured_service_title',
+                        'type'      => 'text',
+                        'title'     => 'Featured Services Title'
+                    ),
+                    array(
+                        'id'        => 'featured_service_shortdes',
+                        'type'      => 'textarea',
+                        'title'     => 'Featured Services Short Description'
+                    ),
+                ),
+            ),
         ),
-  
-      )
     ) );
-  
+    
+    
   }
