@@ -1,21 +1,45 @@
+<?php
+    $options = get_option( 'my_framework' );
+?>
 <!-- ======= About Section ======= -->
 <section id="about" class="about">
       <div class="container">
 
         <div class="row">
           <div class="col-lg-6">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about.png" class="img-fluid" alt="">
+            <img src="<?php echo $options['about_image']['url']; ?>" class="img-fluid" alt="<?php echo $options['about_image']['alt']; ?>">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates</h3>
+            <h3>
+                <?php
+                    if( isset( $options['about_title'] ) ){
+                        echo $options['about_title'];
+                    }
+                ?>
+            </h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+                <?php
+                    if( isset( $options['about_description'] ) ){
+                        echo $options['about_description'];
+                    }
+                ?>
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda</li>
+                <?php
+                    $abouts = $options['about_repeater'];
+                    foreach( $abouts as $about ):
+                ?>
+                <li>
+                    <i class="bi bi-check-circle"></i> 
+                    <?php
+                        if( isset( $about['about_list'] ) ){
+                            echo $about['about_list'];
+                        }
+                    ?>
+                </li>
+                <?php
+                    endforeach;
+                ?>
             </ul>
           </div>
         </div>
