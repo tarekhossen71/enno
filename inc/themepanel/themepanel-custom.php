@@ -26,5 +26,7 @@ if( class_exists( 'CSF' ) ) {
     require_once get_template_directory(). '/inc/themepanel/sections/testimonial-section.php';
     // Call to action Section 
     require_once get_template_directory(). '/inc/themepanel/sections/cta-section.php';
+    // Team Section 
+    require_once get_template_directory(). '/inc/themepanel/sections/team-section.php';
     
   }
