@@ -8,22 +8,22 @@
         <div class="section-title">
           <span>
             <?php
-                if( isset( $options['service_section_bg_title'] ) ){
-                    echo $options['service_section_bg_title'];
+                if( isset( $options['services_section_title'] ) ){
+                    echo $options['services_section_title'];
                 }
             ?>
           </span>
           <h2>
             <?php
-                if( isset( $options['service_section_bg_title'] ) ){
-                    echo $options['service_section_bg_title'];
+                if( isset( $options['services_section_title'] ) ){
+                    echo $options['services_section_title'];
                 }
             ?>
           </h2>
           <p>
             <?php
-                if( isset( $options['service_section_description'] ) ){
-                    echo $options['service_section_description'];
+                if( isset( $options['services_section_description'] ) ){
+                    echo $options['services_section_description'];
                 }
             ?>
           </p>
@@ -38,22 +38,22 @@
                 <div class="icon-box">
                 <div class="icon">
                     <?php
-                        if( isset( $service['service_icon'] ) ){
-                            echo $service['service_icon'];
+                        if( isset( $service['services_icon'] ) ){
+                            echo $service['services_icon'];
                         }
                     ?>
                 </div>
                 <h4><a href="">
                     <?php
-                        if( isset( $service['service_title'] ) ){
-                            echo $service['service_title'];
+                        if( isset( $service['services_title'] ) ){
+                            echo $service['services_title'];
                         }
                     ?>
                 </a></h4>
                 <p>
                     <?php
-                        if( isset( $service['service_description'] ) ){
-                            echo $service['service_description'];
+                        if( isset( $service['services_description'] ) ){
+                            echo $service['services_description'];
                         }
                     ?>
                 </p>
