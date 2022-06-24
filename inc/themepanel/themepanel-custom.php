@@ -118,6 +118,7 @@ if( class_exists( 'CSF' ) ) {
             ),
         ),
     ) );
+    // Counter Section 
     CSF::createSection( $prefix, array(
         'title'     => 'Counter Section',
         'fields'    => array(
@@ -135,6 +136,44 @@ if( class_exists( 'CSF' ) ) {
                         'id'        => 'counter_name',
                         'title'     => 'Count Name',
                         'type'      => 'text',
+                    ),
+                ),
+            ),
+        ),
+    ) );
+    // Services Section 
+    CSF::createSection( $prefix, array(
+        'title'     => 'Services Section',
+        'fields'    => array(
+            array(
+                'id'        => 'service_section_title',
+                'title'     => 'Services Title',
+                'type'      => 'text',
+            ),
+            array(
+                'id'        => 'service_section_description',
+                'title'     => 'Services Description',
+                'type'      => 'textarea',
+            ),
+            array(
+                'id'        => 'services_section_repeater',
+                'title'     => 'Services',
+                'type'      => 'repeater',
+                'fields'    => array(
+                    array(
+                        'id'        => 'service_icon',
+                        'title'     => 'Service Icon Tag',
+                        'type'      => 'text',
+                    ),
+                    array(
+                        'id'        => 'service_title',
+                        'title'     => 'Service Title',
+                        'type'      => 'text',
+                    ),
+                    array(
+                        'id'        => 'service_description',
+                        'title'     => 'Service Description',
+                        'type'      => 'textarea',
                     ),
                 ),
             ),

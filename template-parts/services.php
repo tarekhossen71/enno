@@ -1,63 +1,67 @@
+<?php
+    $options = get_option( 'my_framework' );
+?>
 <!-- ======= Services Section ======= -->
 <section id="services" class="services section-bg">
       <div class="container">
 
         <div class="section-title">
-          <span>Services</span>
-          <h2>Services</h2>
-          <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+          <span>
+            <?php
+                if( isset( $options['service_section_bg_title'] ) ){
+                    echo $options['service_section_bg_title'];
+                }
+            ?>
+          </span>
+          <h2>
+            <?php
+                if( isset( $options['service_section_bg_title'] ) ){
+                    echo $options['service_section_bg_title'];
+                }
+            ?>
+          </h2>
+          <p>
+            <?php
+                if( isset( $options['service_section_description'] ) ){
+                    echo $options['service_section_description'];
+                }
+            ?>
+          </p>
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+        <?php
+            $services = $options['services_section_repeater'];
+            foreach( $services as $service ):
+        ?>
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="icon-box">
+                <div class="icon">
+                    <?php
+                        if( isset( $service['service_icon'] ) ){
+                            echo $service['service_icon'];
+                        }
+                    ?>
+                </div>
+                <h4><a href="">
+                    <?php
+                        if( isset( $service['service_title'] ) ){
+                            echo $service['service_title'];
+                        }
+                    ?>
+                </a></h4>
+                <p>
+                    <?php
+                        if( isset( $service['service_description'] ) ){
+                            echo $service['service_description'];
+                        }
+                    ?>
+                </p>
+                </div>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">Sed ut perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="">Magni Dolores</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4><a href="">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-slideshow"></i></div>
-              <h4><a href="">Dele cardo</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-arch"></i></div>
-              <h4><a href="">Divera don</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-            </div>
-          </div>
-
+        <?php
+            endforeach;
+        ?>
         </div>
-
       </div>
     </section><!-- End Services Section -->
