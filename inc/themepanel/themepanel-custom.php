@@ -28,5 +28,9 @@ if( class_exists( 'CSF' ) ) {
     require_once get_template_directory(). '/inc/themepanel/sections/cta-section.php';
     // Team Section 
     require_once get_template_directory(). '/inc/themepanel/sections/team-section.php';
+    // Contact Section 
+    require_once get_template_directory(). '/inc/themepanel/sections/contact-section.php';
+    // Copyright Section 
+    require_once get_template_directory(). '/inc/themepanel/sections/copyright-section.php';
     
   }
