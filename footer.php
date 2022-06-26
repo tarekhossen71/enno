@@ -1,12 +1,25 @@
+<?php
+  $options =  get_option( 'my_framework' );
+?>
 <!-- ======= Footer ======= -->
 <footer id="footer">
 
 <div class="container footer-bottom clearfix">
   <div class="copyright">
-    &copy; Copyright <strong><span>eNno</span></strong>. All Rights Reserved
+    <?php
+      if( isset( $options['copyright_section_text'] ) ){
+        echo $options['copyright_section_text'];
+      }
+    ?>
   </div>
   <div class="credits">
-    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    Designed by <a href="<?php echo $options['copyright_section_design_by_url']; ?>">
+        <?php
+            if( isset( $options['copyright_section_design_by'] ) ){
+                echo $options['copyright_section_design_by'];
+            }
+        ?>
+    </a>
   </div>
 </div>
 </footer>
