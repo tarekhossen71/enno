@@ -37,8 +37,26 @@
                     'title'     => 'Team About',
                     'type'      => 'textarea',
                 ),
+                array(
+                    'id'        => 'team_member_social_meida',
+                    'title'     => 'Team Member Social Media',
+                    'type'      => 'repeater',
+                    'fields'    => array(
+                        array(
+                            'id'        => 'social_icon_class',
+                            'title'     => 'Social Icon Class',
+                            'type'      => 'text',
+                            'desc'   => 'Get Icon Class From: https://icons.getbootstrap.com/'
+                        ),
+                        array(
+                            'id'    => 'social_icon_url',
+                            'title' => 'Social Icon URL',
+                            'type'  => 'text',
+                        ),
+                    ),
+                ),
                 
             ),
         ),
         )
-      ) );
+    ) );

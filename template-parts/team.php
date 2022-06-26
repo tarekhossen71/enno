@@ -53,10 +53,17 @@
                             ?>
                         </p>
                         <div class="social">
-                            <a href=""><i class="bi bi-twitter"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
+                            <?php
+                                if( !empty( $team['team_member_social_meida'] ) ):
+                                    foreach( $team['team_member_social_meida'] as $social ):
+                            ?>
+                                <a href="<?php echo $social['social_icon_url']; ?>">
+                                    <i class="<?php echo $social['social_icon_class']; ?>"></i>
+                                </a>
+                            <?php
+                                    endforeach;
+                                endif;
+                            ?>
                         </div>
                     </div>
                 </div>
